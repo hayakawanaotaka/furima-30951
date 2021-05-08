@@ -1,6 +1,7 @@
 # テーブル設計
 
 ## users テーブル
+
 | Column             | Type   | Options     |
 | --------           | ------ | ----------- |
 | email              | string | null: false |
@@ -34,7 +35,7 @@
 | Column            | Type   | Options                        |
 | --------          | ------ | -----------                    |
 | buyer_id          | string | null: false, foreign_key: true |
-| item_id           | string | null: false, foregin_key: true |
+| item_id           | string | null: false, foreign_key: true |
  
 ### Association
 - belongs_to :items
