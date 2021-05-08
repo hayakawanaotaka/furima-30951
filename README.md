@@ -17,6 +17,7 @@
 - has_many :seller_items, foreign_key: true
 - has_many :buyer_items, foreign_key :true
 
+
 ## addresses テーブル
 | Column            | Type   | Options     |
 | --------          | ------ | ----------- |
