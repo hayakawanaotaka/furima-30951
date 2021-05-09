@@ -11,34 +11,35 @@
 | first_name         | string | null: false |
 | family_name_kana   | string | null: false |
 | first_name_kana    | string | null: false |
+| birth_day          | string | null: false |
 
 ### Association
-- has_many :seller_items, foreign_key: true
-- has_many :buyer_items, foreign_key :true
+- has_many :item
+- has_one :item_manadgement
 
 ## addresses テーブル
-| Column            | Type   | Options     |
-| --------          | ------ | ----------- |
-| post_code         | string | null: false |
-| prefecture        | string | null: false |
-| city              | string | null: false |
-| street            | string | null: false |
-| building          | string |             |
-| phone_number      | string | null: false |
+| Column            | Type    | Options     |
+| --------          | ------  | ----------- |
+| post_code         | string  | null: false |
+| prefecture_id     | integer | null: false |
+| city              | string  | null: false |
+| street            | string  | null: false |
+| building          | string  |             |
+| phone_number      | string  | null: false |
 
 ### Association
-- belongs_to :users
-- has_one :item_managements
+- belongs_to :user
 
 ## item_managements テーブル
-| Column            | Type   | Options                        |
-| --------          | ------ | -----------                    |
-| buyer_id          | string | null: false, foreign_key: true |
-| item_id           | string | null: false, foreign_key: true |
+| Column            | Type       | Options                        |
+| --------          | ------     | -----------                    |
+| buyer             | references | null: false, foreign_key: true |
+| item              | references | null: false, foreign_key: true |
  
 ### Association
-- belongs_to :items
-- belongs_to :users
+- belongs_to :item
+- belongs_to :user
+- has_one :address
 
 ## items テーブル
 | Column            | Type       | Options                        |
@@ -47,11 +48,11 @@
 | price             | integer    | null: false                    |
 | description       | text       | null: false                    |
 | item_status       | string     | null: false                    |
-| postage_type      | string     | null: false                    |
-| postage_payer     | string     | null: false                    |
+| delivery_fee      | string     | null: false                    |
+| delivery_day      | string     | null: false                    |
 | category          | integer    | null: false                    |
-| brand             | integer    |                                |
 | seller_prefecture | string     | null: false                    |
 
 ### Association
-- belongs_to :user dependent: :destroy
+- belongs_to :user
+- has_one :item_management
