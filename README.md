@@ -11,11 +11,11 @@
 | first_name         | string | null: false               |
 | family_name_kana   | string | null: false               |
 | first_name_kana    | string | null: false               |
-| birth_day          | string | null: false               |
+| birth_day          | date   | null: false               |
 
 ### Association
 - has_many :items
-- has_one :item_manadgement
+- has_many :item_managements
 
 ## addresses テーブル
 | Column            | Type       | Options                        |
@@ -29,7 +29,7 @@
 | item_management   | references | null: false, foreign_key: ture |
 
 ### Association
-- belongs_to :user
+- belongs_to :item_manegemnet
 
 ## item_managements テーブル
 | Column            | Type       | Options                        |
@@ -48,11 +48,11 @@
 | name              | string     | null: false                    |
 | price             | integer    | null: false                    |
 | description       | text       | null: false                    |
-| item_status       | integer    | null: false                    |
-| delivery_fee      | integer    | null: false                    |
-| delivery_day      | integer    | null: false                    |
-| category          | integer    | null: false                    |
-| seller_prefecture | integer    | null: false                    |
+| item_status_id    | integer    | null: false                    |
+| delivery_fee_id   | integer    | null: false                    |
+| delivery_day_id   | integer    | null: false                    |
+| category_id       | integer    | null: false                    |
+| prefecture_id     | integer    | null: false                    |
 | user              | references | null: false, foreign_key: true |
 
 ### Association
