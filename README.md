@@ -12,6 +12,7 @@
 | family_name_kana   | string | null: false |
 | first_name_kana    | string | null: false |
 
+
 ### Association
 - has_many :seller_items, foreign_key: true
 - has_many :buyer_items, foreign_key :true
@@ -23,7 +24,7 @@
 | prefecture        | string | null: false |
 | city              | string | null: false |
 | street            | string | null: false |
-| building          | string |             |
+| building_name     | string |             |
 | phone_number      | string | null: false |
 
 ### Association
@@ -41,17 +42,16 @@
 - belongs_to :users
 
 ## items テーブル
-| Column            | Type       | Options                        |
-| --------          | ------     | -----------                    |
-| name              | string     | null: false                    |
-| price             | integer    | null: false                    |
-| description       | text       | null: false                    |
-| item_status       | string     | null: false                    |
-| postage_type      | string     | null: false                    |
-| postage_payer     | string     | null: false                    |
-| category          | integer    | null: false                    |
-| brand             | integer    |                                |
-| seller_prefecture | string     | null: false                    |
+| Column           | Type       | Options                        |
+| --------         | ------     | -----------                    |
+| name             | string     | null: false                    |
+| price            | integer    | null: false                    |
+| description      | text       | null: false                    |
+| item_status      | string     | null: false                    |
+| postage_type     | string     | null: false                    |
+| postage_payer    | string     | null: false                    |
+| category         | integer    | null: false                    |
+| brand            | integer    |                                |
 
 ### Association
 - belongs_to :user dependent: :destroy
