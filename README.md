@@ -17,6 +17,7 @@
 - has_many :items
 - has_many :item_managements
 
+
 ## addresses テーブル
 | Column            | Type       | Options                        |
 | --------          | ------     | -----------                    |
